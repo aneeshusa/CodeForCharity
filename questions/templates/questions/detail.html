@@ -1,8 +1,10 @@
 
+
 <!--Adding in ACE elements-->
+<!--
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
 <title>Code for Charity</title>
 <style type="text/css" media="screen">
     .editor { 
@@ -11,6 +13,9 @@
         width: 300px; 
     }
 </style>
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
 </head>
 <body>
 {% if user.is_authenticated %}
@@ -20,6 +25,7 @@
 {% endif %}
 
 <!-- logout button --> 
+<!--
 <div id='logoutbutton'>
 	<a href="/questions/logout/">Logout</a>
 </div>
@@ -50,6 +56,121 @@
     	editor.setTheme("ace/theme/dreamweaver");
     	editor.getSession().setMode("ace/mode/javascript");
 	}
+
+	//17 long 
+	var cute_phases = [
+		'Remember to turn off lights when you\'re not using them!', 
+		'1 out of 4 ingredients in our medicine is from rainforest plants.',
+		'Rainforests used to cover 14% of the Earth’s surface but due to deforestation now only cover around 6%.',
+		'About half of all known species of plants and animals live in the tropical rainforest.',
+		'The rainforest is responsible for the majority of the oxygen production in the air that we breathe.', 
+		'Ask your school to buy environmentally-friendly paper!',
+		'By playing this game, you\'re helping endangered species!',
+		'Re-use paper bags instead of throwing them out!',
+		'Recycle everything!', 
+		'Always print double-sided!',
+		'Drink tap or filtered water, not bottled.',
+		'Take showers, not baths, to save on water.', 
+		'Sea otters hold each other’s paws when they sleep so they don’t drift apart.',
+		'A group of flamingos is called a “flamboyance.”',
+		'A group of porcupines is called a “prickle.”',
+		'Turn off your computer at night!', 
+		'Use rechargable batteries!'
+	]
 </script>
 </body>
+</html>
+-->
+
+<!--design implemented--> 
+<html>
+	<head>
+		<title>Code for Charity</title>
+		<style type="text/css" media="screen">
+		    .editor { 
+		        position: relative;
+		        height: 200px; 
+		        width: 300px; 
+		    }
+		</style>
+		{% load staticfiles %}
+
+		<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+	</head>
+	<body>
+		<script src = "jquery.js"></script>
+		<table>
+			<tr>
+				<td class = "snake">
+					<div class = "fixer" id = "header">
+						<img src ="http://icons.iconarchive.com/icons/martin-berube/animal/256/snake-icon.png">
+						<p>
+						<div class = "main">
+							<h1>About Us</h1>
+							<p> Code for Charity....</p>
+						</div>
+					</div>
+				</td>
+				<td class ="content">
+
+					<div class = "main">
+						<div id="topic"><h1>{{topic}}</h1></div>
+						
+						{% if question_list %}
+						    {% for question in question_list %}
+						    	<div id = "question">
+									<h2>Question</h2>
+							        <p>{{ question.text }}</a></p>
+							        <div class="editor">{{question.question_code}}</div>
+							        <a href = "/questions/{{ next_topic_id }}/" class = "SubmitButton">Submit</a>
+						        </div>
+						        <br>
+						    {% endfor %}
+						{% else %}
+						    <p>No questions are available.</p>
+						{% endif %}
+						
+						<br>
+						
+						<div align = "right">
+							<a href = "/questions/{{ next_topic_id }}/" class = "button">Next</a>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		</div>
+
+<!--script for ACE elements-->
+<script src="/static/js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	elements = document.getElementsByClassName('editor');
+	for (i = 0; i < elements.length; i++){
+		var editor = ace.edit(elements[i]);
+    	editor.setTheme("ace/theme/dreamweaver");
+    	editor.getSession().setMode("ace/mode/javascript");
+	}
+
+	//17 long 
+	var cute_phases = [
+		'Remember to turn off lights when you\'re not using them!', 
+		'1 out of 4 ingredients in our medicine is from rainforest plants.',
+		'Rainforests used to cover 14% of the Earth’s surface but due to deforestation now only cover around 6%.',
+		'About half of all known species of plants and animals live in the tropical rainforest.',
+		'The rainforest is responsible for the majority of the oxygen production in the air that we breathe.', 
+		'Ask your school to buy environmentally-friendly paper!',
+		'By playing this game, you\'re helping endangered species!',
+		'Re-use paper bags instead of throwing them out!',
+		'Recycle everything!', 
+		'Always print double-sided!',
+		'Drink tap or filtered water, not bottled.',
+		'Take showers, not baths, to save on water.', 
+		'Sea otters hold each other’s paws when they sleep so they don’t drift apart.',
+		'A group of flamingos is called a “flamboyance.”',
+		'A group of porcupines is called a “prickle.”',
+		'Turn off your computer at night!', 
+		'Use rechargable batteries!'
+	]
+</script>
+	</body>
 </html>
