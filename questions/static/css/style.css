@@ -19,7 +19,7 @@ h1 {
 	font-size: 2.5em;
 	text-decoration: none;
 	text-transform: lowercase;
-	color: #4F693E;
+	color: #eb520a;
 	line-height: 25%;
 }
 
@@ -28,7 +28,7 @@ h2 {
 	font-size: 2em;
 	text-decoration: none;
 	text-transform: lowercase;
-	color: #4F693E;
+	color: #eb520a;
 	line-height: 25%;
 }
 
@@ -70,12 +70,6 @@ td.content {
 	margin-left: auto;
 	margin-right: auto;
 }
-/*.snake {
-	position: fixed;
-	z-index: 20;
-
-
-}*/
 
 #header {
 	margin-top: 50px;
@@ -88,21 +82,27 @@ td.content {
 	border-radius: 5px;
 	vertical-align: top;
 
-
 }
 
 #project {
-	background-color: #D6D2B2;
+	background-color: #CFCBAE;
 	padding: 10px;
 	border-radius: 5px;
 	vertical-align: top;
 }
 
-.popups {
-
+#information {
+	background-color: #DBD7B8;
+	padding: 10px;
+	border-radius: 5px;
+	vertical-align: top;
 }
 
-#about {
+#score {
+	background-color: #DBD7B8;
+	padding: 10px;
+	border-radius: 5px;
+	vertical-align: top;
 
 }
 
@@ -112,7 +112,7 @@ td.content {
 	width: 100px;
 	background: #9ACC78;
 
-	color: rgba(0, 0, 0, 0.45);
+	color: #eb520a;
 	text-align: center;
 	text-transform: lowercase;
 	font: bold 1.5em/50px Calibri;
