@@ -1,0 +1,134 @@
+p {
+	font-family: Calibri;
+	font-size: 1em;
+	text-decoration: none;
+	color: #4F693E;
+	
+}
+
+a {
+
+}
+
+body {
+	background-color: #FFFBE3;
+}
+
+h1 {
+	font-family: Calibri;
+	font-size: 2.5em;
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #4F693E;
+	line-height: 25%;
+}
+
+h2 {
+	font-family: Calibri;
+	font-size: 2em;
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #4F693E;
+	line-height: 25%;
+}
+
+td.snake {
+	min-width: 300px;
+	width: 20%;
+	vertical-align: top;
+	text-align: center;
+	padding-left: 30px;
+}
+
+td.content {
+	width: 80%;
+	vertical-align: text-top;
+
+}
+
+.main {
+	color: #000000;
+	background-color: #EDE8C5;
+	padding: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	vertical-align: top;
+
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 900px;
+	position: relative;
+
+}
+
+.fixer {
+	position: fixed;
+	z-index: 20;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*.snake {
+	position: fixed;
+	z-index: 20;
+
+
+}*/
+
+#header {
+	margin-top: 50px;
+}
+
+
+#question {
+	background-color: #DBD7B8;
+	padding: 10px;
+	border-radius: 5px;
+	vertical-align: top;
+
+
+}
+
+#project {
+	background-color: #D6D2B2;
+	padding: 10px;
+	border-radius: 5px;
+	vertical-align: top;
+}
+
+.popups {
+
+}
+
+#about {
+
+}
+
+.button {
+	display: block;
+	height: 50px;
+	width: 100px;
+	background: #9ACC78;
+
+	color: rgba(0, 0, 0, 0.45);
+	text-align: center;
+	text-transform: lowercase;
+	font: bold 1.5em/50px Calibri;
+
+	background: linear-gradient(top, #9ACC78, #6D9154);
+    border-radius: 5px;
+    text-shadow: 0 2px 2px rgba(255, 255, 255, 0.2);
+
+}
+
+a.button {
+	text-decoration: none;
+
+}
+
+a.button:hover {
+ 	background: #D0D1CF;
+	color: rgba(0, 0, 0, 0.30);
+}
