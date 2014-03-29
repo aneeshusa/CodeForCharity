@@ -1,6 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -9,6 +9,7 @@ from questions.models import Topic
 def index(request):
 	return render(request, 'questions/index.html', {})
 
+#conatins all the questions 
 def detail(request, topic_id):
 	#gets the topic associated with the id number
 	topic = Topic.objects.get(pk=topic_id)
@@ -37,7 +38,12 @@ def create_user(request):
         form = UserCreationForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             user = form.save()
-            return HttpResponseRedirect('/questions/1/') # Redirect after POST
+            user.progress = 1; 
+            user.score = 0; 
+            user.save()
+            print type(user)
+            #login(request, user)
+            return HttpResponseRedirect('/questions/login/') # Redirect after POST
     else:
         form = UserCreationForm() # An unbound form
 
@@ -59,5 +65,11 @@ def authenticate_user(request):
         'form': form,
     })
 
+#logs user out of app 
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/questions/login') # Redirect after POST
+
+#endpage
 def finish(request):
 	return HttpResponse("Thank you for playing!")

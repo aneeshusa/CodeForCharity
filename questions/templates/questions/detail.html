@@ -13,7 +13,19 @@
 </style>
 </head>
 <body>
+{% if user.is_authenticated %}
+    <p>You are logged in as {{ user.username }}</p>
+{% else %}
+    <p>Welcome, new user. Please <a href="/questions/login/">log in</a></p>
+{% endif %}
+
+<!-- logout button --> 
+<div id='logoutbutton'>
+	<a href="/questions/logout/">Logout</a>
+</div>
+
 <h1>{{topic}}</h1>
+<p>Score: {{user.score}}</p>
 {% if question_list %}
     <ul>
     {% for question in question_list %}

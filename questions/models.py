@@ -13,11 +13,22 @@ class Question(models.Model):
 	text = models.CharField(max_length=2000)
     #pre-filled code 
 	question_code = models.CharField(max_length=2000)
-    #code that the user inputs
-	answer_code = models.CharField(max_length=2000)
 
 class Test(models.Model):
 	#there can be multiple tests per question
 	question = models.ForeignKey(Question)
 	#holds the code for the tests
 	test_code = models.CharField(max_length=2000)    
+
+ 
+#custom User info 
+from django.contrib.auth.models import User
+
+class UserExtension(models.Model):
+    user = models.OneToOneField(User)
+    #holds topic_id of last Topic they were at
+    progress = models.IntegerField(max_length=100)
+    #holds users overall score
+    score = models.IntegerField(max_length=100)
+
+#add some way to cache answers that users input 
