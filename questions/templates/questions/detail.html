@@ -18,11 +18,18 @@
 			<tr>
 				<td class = "snake">
 					<div class = "fixer" id = "header">
-						<img src ="http://icons.iconarchive.com/icons/martin-berube/animal/256/snake-icon.png">
+						<img src = "/static/images/snake.png">
+						<img src = "/static/images/speechbubble.png">
 						<p>
 						<div class = "main" id="aboutinfo">
-							<h1>About Us</h1>
-							<p> Code for Charity....</p>
+							<div id = "information">
+							<h1>bit_by_bit</h1>
+							<p> Changing the world, one line of code at a time!</p>
+							</div>
+							<br>
+							<div id = "score">
+							<h1>Score</h1>
+							</div>
 							<br>
 							<div id='funfact'><p><span>Fun facts!</span></p></div>
 						</div>
@@ -50,10 +57,11 @@
 						{% if question_list %}
 						    {% for question in question_list %}
 						    	<div id = "question">
-									<h2>Question</h2>
+									<h2>Question {{question.id}}</h2>
 							        <p>{{ question.text }}</a></p>
 							        <div class="editor">{{question.question_code}}</div>
-							        <a href = "/questions/{{ next_topic_id }}/" class = "SubmitButton">Submit</a>
+							        <button type="button" class="SubmitButton" onclick='funify()'>Submit</button>
+
 						        </div>
 						        <br>
 						    {% endfor %}
@@ -82,7 +90,9 @@
     	editor.setTheme("ace/theme/dreamweaver");
     	editor.getSession().setMode("ace/mode/javascript");
 	}
-
+	function sendPostReq(){
+		//AJAX request to aneesh 
+	}
 	function funify(){
 		rando = Math.floor((Math.random()*17)+1);
 		thing = $('#funfact span').text(cute_phrases[rando]);

@@ -1,6 +1,6 @@
 p {
-	font-family: Calibri;
-	font-size: 1em;
+	font-family: Tahoma;
+	font-size: 0.75em;
 	text-decoration: none;
 	color: #4F693E;
 	
@@ -11,12 +11,12 @@ a {
 }
 
 body {
-	background-color: #FFFBE3;
+	background-color: #FAF0EB;
 }
 
 h1 {
-	font-family: Calibri;
-	font-size: 2.5em;
+	font-family: Tahoma;
+	font-size: 2.0em;
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #eb520a;
@@ -24,8 +24,8 @@ h1 {
 }
 
 h2 {
-	font-family: Calibri;
-	font-size: 2em;
+	font-family: Tahoma;
+	font-size: 1.75em;
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #eb520a;
@@ -38,6 +38,7 @@ td.snake {
 	vertical-align: top;
 	text-align: center;
 	padding-left: 30px;
+	padding-right: 30px;
 }
 
 td.content {
@@ -47,8 +48,7 @@ td.content {
 }
 
 .main {
-	color: #000000;
-	background-color: #EDE8C5;
+	background-color: #A2E0FC;
 	padding: 25px;
 	margin-left: auto;
 	margin-right: auto;
@@ -81,7 +81,7 @@ td.content {
 
 
 #question {
-	background-color: #DBD7B8;
+	background-color: #6FD0FC;
 	padding: 10px;
 	border-radius: 5px;
 	vertical-align: top;
@@ -97,21 +97,21 @@ td.content {
 }
 
 #project {
-	background-color: #CFCBAE;
+	background-color: #6FD0FC;
 	padding: 10px;
 	border-radius: 5px;
 	vertical-align: top;
 }
 
 #information {
-	background-color: #DBD7B8;
+	background-color: #6FD0FC;
 	padding: 10px;
 	border-radius: 5px;
 	vertical-align: top;
 }
 
 #score {
-	background-color: #DBD7B8;
+	background-color: #6FD0FC;
 	padding: 10px;
 	border-radius: 5px;
 	vertical-align: top;
@@ -127,7 +127,7 @@ td.content {
 	color: #eb520a;
 	text-align: center;
 	text-transform: lowercase;
-	font: bold 1.5em/50px Calibri;
+	font: bold 1.5em/50px Tahoma;
 
 	background: linear-gradient(top, #9ACC78, #6D9154);
     border-radius: 5px;
