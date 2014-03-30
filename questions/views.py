@@ -70,15 +70,6 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/questions/login') # Redirect after POST
 
-def update(request, topic_id):
-    #make sure the request is coming from localhost
-    #then we know that it's formatted nicely (200 and all)
-    #post data format: {"username": "aneeshusa", "question_id": "23", "passed": "True"}
-    # so just update the score in the django data base and send back the ajax response to the original request
-    return HttpResponseRedirect('/questions/1/')
-
-
-
 def verify(request, topic_id):
     print 'verify called' 
     if request.is_ajax():
