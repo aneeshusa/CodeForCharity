@@ -60,7 +60,7 @@
 									<h2>Question {{question.id}}</h2>
 							        <p>{{ question.text }}</a></p>
 							        <div class="editor">{{question.question_code}}</div>
-							        <button type="button" class="SubmitButton" onclick='funify()'>Submit</button>
+							        <button type="button" class="SubmitButton" id={{question.id}}>Submit</button>
 
 						        </div>
 						        <br>
@@ -83,21 +83,39 @@
 <!--script for ACE elements-->
 <script src="/static/js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src = "/static/js/jquery.js"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
 <script>
+	//ACE text editor 
 	elements = document.getElementsByClassName('editor');
 	for (i = 0; i < elements.length; i++){
 		var editor = ace.edit(elements[i]);
     	editor.setTheme("ace/theme/dreamweaver");
     	editor.getSession().setMode("ace/mode/javascript");
 	}
-	function sendPostReq(){
-		//AJAX request to aneesh 
-	}
+	//AJAX call to node.js for testing submitted code
+	$(".SubmitButton").click(function(){
+	    $.ajax({
+	    	type: 'POST', 
+	    	url:"/questions/verify",
+	    	data:{ 	"question_id":"PUT DAT QID HERE",
+	    			"answer": "TEXT AND SHIT"
+	    		},
+	    	dataType: "JSON", 
+	    	success: function(data){
+	    		//do stuff if they got it correct 
+	    		//only visual things (toast, gold star, ungrey sections etc)
+	    	}, 
+	    	failure: function(data){
+	    		//again, only visual things upon failure 
+	    	}
+		});
+  	});
+  	//for fun cute facts to be said by Tim the Snake! 
 	function funify(){
 		rando = Math.floor((Math.random()*17)+1);
 		thing = $('#funfact span').text(cute_phrases[rando]);
 	}
-
+	//because jQuery needs doc to be ready
 	$(document).ready(function () {
 		funify(); 
 	});
