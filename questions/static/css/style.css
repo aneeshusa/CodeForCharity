@@ -1,9 +1,9 @@
 p {
 	font-family: Tahoma;
-	font-size: 1.2em;
+	font-size: 0.75em;
 	text-decoration: none;
 	color: #4F693E;
-
+	
 }
 
 a {
@@ -12,6 +12,13 @@ a {
 
 body {
 	background-color: #FAF0EB;
+}
+
+#loginpage {
+	background-image: url("http://www.downloadclipart.net/large/16405-grass-background-design.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: bottom; 
 }
 
 h1 {
@@ -30,16 +37,20 @@ h2 {
 	text-transform: lowercase;
 	color: #eb520a;
 	line-height: 25%;
-	text-align: center; 
 }
 
 h3 {
 	font-family: Tahoma;
-	font-size: 4.0em;
+	font-size: 3.5em;
 	text-decoration: none;
 	text-transform: lowercase;
-	color: #6FD0FC;
+	color: #eb520a;
 	line-height: 25%;
+}
+
+table.frontpage {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 td.snake {
@@ -58,8 +69,7 @@ td.content {
 }
 
 .main {
-	/*background-color: #A2E0FC;*/
-	background-color: #c7ecfc; 
+	background-color: #A2E0FC;
 	padding: 25px;
 	margin-left: auto;
 	margin-right: auto;
@@ -68,14 +78,43 @@ td.content {
 
 }
 
-#qtext{
-	width: 90%;
-	margin-left: 5%;
+.login {
+	background-color: #A2E0FC;
+	padding: 30px;
+	width: 600px;
+	vertical-align: top;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	text-align: center;
 }
+
+.front_code {
+	background-color: #CCEEFC;
+	vertical-align: top;
+	width: 500px;
+	padding: 25px;
+	border-radius: 10px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: 50px;
+}
+
+
+.front_charity {
+	background-color: #CCEEFC;
+	vertical-align: top;
+	width: 500px;
+	padding: 25px;
+	border-radius: 10px;
+	text-align: center;
+	margin-left: 50px;
+	margin-right: auto;
+}
+
 
 #aboutinfo{
 	width: 225px;
-	background-color: #70fc50;
 }
 
 .wrapper {
@@ -98,11 +137,11 @@ td.content {
 
 
 #question {
-	/*background-color: #6FD0FC;*/
 	background-color: #6FD0FC;
 	padding: 10px;
 	border-radius: 5px;
 	vertical-align: top;
+
 }
 
 .editor { 
@@ -135,21 +174,6 @@ td.content {
 
 }
 
-.login {
-	background-color: #eb520a;
-	min-height: 400px;
-	height: 40%;
-	vertical-align: top;
-	padding: 0px;
-}
-
-.about {
-	background-color: #FAD400;
-	height: 60%;
-	vertical-align: top;
-	padding: 0px;
-}
-
 .button {
 	display: block;
 	height: 50px;
@@ -176,3 +200,4 @@ a.button:hover {
  	background: #D0D1CF;
 	color: rgba(0, 0, 0, 0.30);
 }
+s
