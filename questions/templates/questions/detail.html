@@ -26,6 +26,20 @@
 				<td class ="content">
 
 					<div class = "main">
+						<div class="userinfo">
+							<!--shows who is logged in-->
+							{% if user.is_authenticated %}
+							    <p>You are logged in as {{ user.username }}</p>
+							{% else %}
+							    <p>Welcome, new user. Please <a href="/questions/login/">log in</a></p>
+							{% endif %}
+
+							<!-- logout button --> 
+							<div id='logoutbutton'>
+								<a href="/questions/logout/">Logout</a>
+							</div>
+						</div>
+
 						<div id="topic"><h1>{{topic}}</h1></div>
 						
 						{% if question_list %}
