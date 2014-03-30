@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from questions.models import Topic
+import urllib2, urllib
 
 def index(request):
 	return render(request, 'questions/index.html', {})
@@ -71,10 +72,40 @@ def logout_view(request):
     return HttpResponseRedirect('/questions/login') # Redirect after POST
 
 def verify(request, topic_id):
-    print 'verify called' #send stuff to aneesh 
+    print 'verify called' 
+    if request.is_ajax():
+        print 'HUZZAH!'
+        data = {
+            #stuff
+        }
+        myurl = '/questions/' + str(topic_id)
+        return HttpResponseRedirect(myurl)
+    else:
+        myurl = '/questions/' + str(topic_id)
+        return HttpResponseRedirect(myurl)
+    
+    #unpack post request and make sure it's in the correct format 
+    #request.user <-- gets currently logged in user
+    #get username
+    #check that username has access to question they are submitting  
+    #
+    #send aneesh a post request 
+    post_data = [('username', 'aneeshusa'), ('question_id', '42'), ('answer', 'whatever scriptin')]
+    result = urllib2.urlopen('10.25.184.171:8888', urllib.urlencode(post_data))
+    content = result.read()
+    print content
+
     myurl = '/questions/' + str(topic_id)
     return HttpResponseRedirect(myurl)
 
 #endpage
 def finish(request):
 	return HttpResponse("Thank you for playing!")
+    
+#for saving data 
+from django.core import serializers
+def serialize_content(request):
+    data = serializers.serialize("json", Topic.objects.all())
+    print data
+    return HttpResponseRedirect('/questions/')
+ 
