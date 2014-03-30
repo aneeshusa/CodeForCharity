@@ -57,6 +57,10 @@ td.content {
 
 }
 
+#aboutinfo{
+	width: 225px;
+}
+
 .wrapper {
 	margin: 0 auto;
 	width: 900px;
