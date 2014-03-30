@@ -63,6 +63,15 @@ table.frontpage {
 	margin-right: auto;
 }
 
+td.snake {
+	min-width: 300px;
+	width: 20%;
+	vertical-align: top;
+	text-align: center;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
 td.content {
 	width: 80%;
 	vertical-align: text-top;
