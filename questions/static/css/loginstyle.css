@@ -23,7 +23,7 @@ body {
 }
 
 #loginpage {
-	background-image: url("http://www.downloadclipart.net/large/16405-grass-background-design.png");
+	background-image: url("/Users/barbara/Documents/Projects/HackPrinceton/CodeForCharity/questions/static/images/grassbackground.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: bottom; 
