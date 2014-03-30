@@ -1,6 +1,6 @@
 p {
 	font-family: Tahoma;
-	font-size: 0.75em;
+	font-size: 1.2em;
 	text-decoration: none;
 	color: #4F693E;
 	
@@ -28,6 +28,7 @@ h1 {
 	text-transform: lowercase;
 	color: #eb520a;
 	line-height: 25%;
+	
 }
 
 h2 {
@@ -37,6 +38,7 @@ h2 {
 	text-transform: lowercase;
 	color: #eb520a;
 	line-height: 25%;
+	text-align: center;
 }
 
 h3 {
@@ -46,6 +48,11 @@ h3 {
 	text-transform: lowercase;
 	color: #eb520a;
 	line-height: 25%;
+}
+
+#qtext{
+ 	width: 90%;
+ 	margin-left: 5%;
 }
 
 table.frontpage {
@@ -69,7 +76,7 @@ td.content {
 }
 
 .main {
-	background-color: #A2E0FC;
+	background-color: #c7ecfc;
 	padding: 25px;
 	margin-left: auto;
 	margin-right: auto;
@@ -112,9 +119,16 @@ td.content {
 	margin-right: auto;
 }
 
+#funfact{
+	background-color: white;
+	padding: 10px;
+	border-radius: 5px;
+	vertical-align: top;
+}
 
 #aboutinfo{
 	width: 225px;
+	background-color: #70fc50;
 }
 
 .wrapper {

@@ -19,11 +19,12 @@
 				<td class = "snake">
 					<div class = "fixer" id = "header">
 						<img src = "/static/images/snake.png">
-						<img src = "/static/images/speechbubble.png">
+						<img src = "/static/images/blurb.png">
 						<p>
 						<div class = "main" id="aboutinfo">
+							<div id='funfact'><p><span>Fun facts!</span></p></div><br>
 							<div id = "information">
-							<h1>bit_by_bit</h1>
+							<div id='name'><h1>bit_by_bit</h1></div>
 							<p> Changing the world, one line of code at a time!</p>
 							</div>
 							<br>
@@ -31,7 +32,6 @@
 							<h1>Score</h1>
 							</div>
 							<br>
-							<div id='funfact'><p><span>Fun facts!</span></p></div>
 						</div>
 					</div>
 				</td>
@@ -128,6 +128,7 @@
 
 	//AJAX call to node.js for testing submitted code
 	$(".SubmitButton").click(function() {
+		funify();
 	    $.ajax({
 	    	type: 'POST', 
 	    	url:"verify/",
