@@ -70,6 +70,11 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/questions/login') # Redirect after POST
 
+def verify(request, topic_id):
+    print 'verify called' #send stuff to aneesh 
+    myurl = '/questions/' + str(topic_id)
+    return HttpResponseRedirect(myurl)
+
 #endpage
 def finish(request):
 	return HttpResponse("Thank you for playing!")
