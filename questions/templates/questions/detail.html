@@ -83,7 +83,7 @@
 <!--script for ACE elements-->
 <script src="/static/js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src = "/static/js/jquery.js"></script>
-<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
 	//ACE text editor 
 	elements = document.getElementsByClassName('editor');
@@ -92,11 +92,42 @@
     	editor.setTheme("ace/theme/dreamweaver");
     	editor.getSession().setMode("ace/mode/javascript");
 	}
+	// Inject CRSF headers for Django
+	// using jQuery
+	function getCookie(name) {
+	    var cookieValue = null;
+	    if (document.cookie && document.cookie != '') {
+	        var cookies = document.cookie.split(';');
+	        for (var i = 0; i < cookies.length; i++) {
+	            var cookie = jQuery.trim(cookies[i]);
+	            // Does this cookie string begin with the name we want?
+	            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+	                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+	                break;
+	            }
+	        }
+	    }
+	    return cookieValue;
+	}//end get cookie
+	var csrftoken = getCookie('csrftoken');
+	function csrfSafeMethod(method) {
+    	// these HTTP methods do not require CSRF protection
+    	return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+	}
+	$.ajaxSetup({
+	    crossDomain: false, // obviates need for sameOrigin test
+	    beforeSend: function(xhr, settings) {
+	        if (!csrfSafeMethod(settings.type)) {
+	            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+	        }
+	    }
+	});
+
 	//AJAX call to node.js for testing submitted code
-	$(".SubmitButton").click(function(){
+	$(".SubmitButton").click(function() {
 	    $.ajax({
 	    	type: 'POST', 
-	    	url:"/questions/verify",
+	    	url:"verify/",
 	    	data:{ 	"question_id":"PUT DAT QID HERE",
 	    			"answer": "TEXT AND SHIT"
 	    		},
