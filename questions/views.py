@@ -73,19 +73,26 @@ def logout_view(request):
 
 def verify(request, topic_id):
     print 'verify called' 
-    #unpack post request and make sure it's in the correct format 
+    question_id = request.POST["question_id"]
+    answer = request.POST["answer"]
+    print question_id
+    print answer
+    print request.POST
     #request.user <-- gets currently logged in user
     #get username
     #check that username has access to question they are submitting  
     #
     #send aneesh a post request 
-    post_data = [('username', 'aneeshusa'), ('question_id', '42'), ('answer', 'whatever scriptin')]
-    print "make post data"
+    print "a"
+    post_data = [('question_id', question_id), ('answer', answer)]
+    print str(post_data)
+    print "b"
     encoded_data = urllib.urlencode(post_data)
-    print "make encoded data"
+    print "c"
     result = urllib2.urlopen('http://10.25.184.171:8888', encoded_data)
-    print "got result"
+    print "d"
     content = result.read()
+    
     print content
 
     myurl = '/questions/' + str(topic_id)
