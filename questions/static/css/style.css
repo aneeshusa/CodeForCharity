@@ -1,6 +1,6 @@
 p {
 	font-family: Tahoma;
-	font-size: 0.6em;
+	font-size: .75em;
 	text-decoration: none;
 	color: #4F693E;
 	
@@ -9,7 +9,7 @@ p {
 a {
 	font-family: Tahoma;
 	font-size: 0.75em;
-	text-decoration: none;
+	text-decoration: bold;
 	color: #6FC900;
 
 }
@@ -19,7 +19,7 @@ a:hover {
 }
 
 body {
-	background-color: #FAF0EB;
+	background-color: white;
 }
 
 #loginpage {
@@ -31,11 +31,12 @@ body {
 
 h1 {
 	font-family: Tahoma;
-	font-size: 2.0em;
+	font-size: 1.5em;
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #eb520a;
 	line-height: 25%;
+	
 }
 
 h2 {
@@ -45,11 +46,12 @@ h2 {
 	text-transform: lowercase;
 	color: #eb520a;
 	line-height: 25%;
+	text-align: center;
 }
 
 h3 {
 	font-family: Tahoma;
-	font-size: 3.5em;
+	font-size: 2.0em;
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #eb520a;
@@ -61,23 +63,21 @@ table.frontpage {
 	margin-right: auto;
 }
 
-td.snake {
-	min-width: 300px;
-	width: 20%;
-	vertical-align: top;
-	text-align: center;
-	padding-left: 30px;
-	padding-right: 30px;
-}
-
 td.content {
 	width: 80%;
 	vertical-align: text-top;
 
 }
 
+#login_info{
+	background-color: #FAF0EB;
+	width: 100%; 
+	padding: 10px;
+	vertical-align: top;
+}
+
 .main {
-	background-color: #A2E0FC;
+	background-color: #c7ecfc;
 	padding: 25px;
 	margin-left: auto;
 	margin-right: auto;
@@ -88,8 +88,8 @@ td.content {
 
 .login {
 	background-color: #A2E0FC;
-	padding: 30px;
-	width: 600px;
+	padding: 15px;
+	width: 400px;
 	vertical-align: top;
 	margin-left: auto;
 	margin-right: auto;
@@ -98,28 +98,42 @@ td.content {
 }
 
 .front_code {
-	background-color: #CCEEFC;
+	background-color: #6FD0FC;
 	vertical-align: top;
-	width: 500px;
+	width: 80%;
+	min-width: 200px; 
 	padding: 25px;
 	border-radius: 10px;
 	text-align: center;
-	margin-left: auto;
+	margin-left: 10%;
 	margin-right: 50px;
 }
 
+#abouthead{
+	width: 100%; 
+	height: 40px; 
+	background-color: #FFE100;
+	text-align: center;
+}
 
 .front_charity {
-	background-color: #CCEEFC;
+	background-color: #6FD0FC;
 	vertical-align: top;
-	width: 500px;
+	width: 80%;
+	min-width: 200px; 
 	padding: 25px;
 	border-radius: 10px;
 	text-align: center;
 	margin-left: 50px;
-	margin-right: auto;
+	margin-right: 10%;
 }
 
+#funfact{
+	background-color: white;
+	padding: 10px;
+	border-radius: 5px;
+	vertical-align: top;
+}
 
 #aboutinfo{
 	width: 225px;
@@ -150,7 +164,13 @@ td.content {
 	padding: 10px;
 	border-radius: 5px;
 	vertical-align: top;
+}
 
+#funfact{
+	background-color: white;
+	padding: 10px;
+	border-radius: 5px;
+	vertical-align: top;
 }
 
 .editor { 
