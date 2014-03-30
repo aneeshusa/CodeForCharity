@@ -32,6 +32,15 @@ h2 {
 	line-height: 25%;
 }
 
+h3 {
+	font-family: Tahoma;
+	font-size: 4.0em;
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #6FD0FC;
+	line-height: 25%;
+}
+
 td.snake {
 	min-width: 300px;
 	width: 20%;
@@ -116,6 +125,21 @@ td.content {
 	border-radius: 5px;
 	vertical-align: top;
 
+}
+
+.login {
+	background-color: #eb520a;
+	min-height: 400px;
+	height: 40%;
+	vertical-align: top;
+	padding: 0px;
+}
+
+.about {
+	background-color: #FAD400;
+	height: 60%;
+	vertical-align: top;
+	padding: 0px;
 }
 
 .button {
