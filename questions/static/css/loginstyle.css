@@ -7,7 +7,15 @@ p {
 }
 
 a {
+	font-family: Tahoma;
+	font-size: 0.75em;
+	text-decoration: none;
+	color: #6FC900;
 
+}
+
+a:hover {
+	opacity: 0.5;
 }
 
 body {
@@ -129,7 +137,7 @@ td.content {
 
 #aboutinfo{
 	width: 225px;
-	background-color: #70fc50;
+	background-color: #6FC900;
 }
 
 .wrapper {
