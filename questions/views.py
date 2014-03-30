@@ -4,7 +4,7 @@ from django.contrib.auth import login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from questions.models import Topic
+from questions.models import Topic, Question
 import urllib2, urllib
 
 def index(request):
@@ -73,26 +73,26 @@ def logout_view(request):
 
 def verify(request, topic_id):
     print 'verify called' 
-    if request.is_ajax():
-        print 'HUZZAH!'
-        data = {
-            #stuff
-        }
-        myurl = '/questions/' + str(topic_id)
-        return HttpResponseRedirect(myurl)
-    else:
-        myurl = '/questions/' + str(topic_id)
-        return HttpResponseRedirect(myurl)
-    
-    #unpack post request and make sure it's in the correct format 
+    question_id = request.POST["question_id"]
+    answer = request.POST["answer"]
+    print question_id
+    print answer
+    print request.POST
     #request.user <-- gets currently logged in user
     #get username
     #check that username has access to question they are submitting  
     #
     #send aneesh a post request 
-    post_data = [('username', 'aneeshusa'), ('question_id', '42'), ('answer', 'whatever scriptin')]
-    result = urllib2.urlopen('10.25.184.171:8888', urllib.urlencode(post_data))
+    print "a"
+    post_data = [('question_id', question_id), ('answer', answer)]
+    print str(post_data)
+    print "b"
+    encoded_data = urllib.urlencode(post_data)
+    print "c"
+    result = urllib2.urlopen('http://10.25.184.171:8888', encoded_data)
+    print "d"
     content = result.read()
+    
     print content
 
     myurl = '/questions/' + str(topic_id)
@@ -105,7 +105,7 @@ def finish(request):
 #for saving data 
 from django.core import serializers
 def serialize_content(request):
-    data = serializers.serialize("json", Topic.objects.all())
+    data = serializers.serialize("json", Question.objects.all())
     print data
     return HttpResponseRedirect('/questions/')
  

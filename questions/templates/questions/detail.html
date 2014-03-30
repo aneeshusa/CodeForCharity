@@ -19,19 +19,19 @@
 				<td class = "snake">
 					<div class = "fixer" id = "header">
 						<img src = "/static/images/snake.png">
-						<img src = "/static/images/speechbubble.png">
+						<img src = "/static/images/blurb.png">
 						<p>
 						<div class = "main" id="aboutinfo">
+							<div id='funfact'><p><span>Fun facts!</span></p></div><br>
 							<div id = "information">
-							<h1>bit_by_bit</h1>
+							<div id='name'><h1>bit_by_bit</h1></div>
 							<p> Changing the world, one line of code at a time!</p>
 							</div>
 							<br>
 							<div id = "score">
-							<h1>Score</h1>
+							<h1>$0.00</h1>
 							</div>
 							<br>
-							<div id='funfact'><p><span>Fun facts!</span></p></div>
 						</div>
 					</div>
 				</td>
@@ -60,7 +60,7 @@
 						    	<div id = "question">
 									<h2>Question {{question.id}}</h2>
 							        <div id='qtext'><p>{{ question.text }}</a></p></div>
-							        <div class="editor">{{question.question_code}}</div>
+							        <div class="editor" id={{ question.id}} >{{question.question_code}}</div>
 							        <button type="button" class="SubmitButton" id={{question.id}}>Submit</button>
 
 						        </div>
@@ -128,11 +128,18 @@
 
 	//AJAX call to node.js for testing submitted code
 	$(".SubmitButton").click(function() {
+
+		var q_id = $(this).attr("id");
+		var codeid = "#" + String(q_id);
+		var aceEL = $(codeid).get(0)
+		var editor = ace.edit(aceEL);
+		var text = editor.getValue();
+		funify();
 	    $.ajax({
 	    	type: 'POST', 
 	    	url:"verify/",
-	    	data:{ 	"question_id":"PUT DAT QID HERE",
-	    			"answer": "TEXT AND SHIT"
+	    	data:{ 	"question_id": String(q_id),
+	    			"answer": String(text)
 	    		},
 	    	dataType: "JSON", 
 	    	success: function(data){

@@ -1,4 +1,5 @@
 
+<!--
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
@@ -19,3 +20,55 @@
 <input type="submit" value="Login" />
 </form>
 <a href="/questions/createuser/">New? Create an account!</a>
+-->
+
+<html>
+	<head>
+		<title></title>
+		{% load staticfiles %}
+
+		<link rel="stylesheet" type="text/css" href="{% static "css/loginstyle.css" %}">
+	</head>
+	<body id = "loginpage">
+		<div class = "login">
+			<h3>bit_by_bit</h3>
+			{% if form.errors %}
+			<p>Your username and password didn't match. Please try again.</p>
+			{% endif %}
+
+			<form method="post" action="">
+			{% csrf_token %}
+			{{ form.username.label_tag }}
+			{{ form.username }}
+			<br>
+			{{ form.password.label_tag }}
+			{{ form.password }}
+			<br>
+
+			<input type="submit" value="Login" />
+			</form>
+			<a href="/questions/createuser/">New? Create an account!</a>
+		</div>
+
+		<div id="abouthead"><h1>about</h1></div>
+		<div id="login_info">
+			<table class = "frontpage">
+				<tr>
+					<td>
+						<div class = "front_code">
+							<h2>Why Code?</h2>
+							<p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+					</td>
+					<td>
+						<div class = "front_charity">
+							<h2>World Wildlife Fund</h2>
+							<p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+	</body>
+</html>

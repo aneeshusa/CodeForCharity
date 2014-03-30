@@ -1,6 +1,6 @@
 p {
 	font-family: Tahoma;
-	font-size: 1.2em;
+	font-size: .75em;
 	text-decoration: none;
 	color: #4F693E;
 	
@@ -11,7 +11,7 @@ a {
 }
 
 body {
-	background-color: #FAF0EB;
+	background-color: white;
 }
 
 #loginpage {
@@ -23,7 +23,7 @@ body {
 
 h1 {
 	font-family: Tahoma;
-	font-size: 2.0em;
+	font-size: 1.5em;
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #eb520a;
@@ -43,30 +43,16 @@ h2 {
 
 h3 {
 	font-family: Tahoma;
-	font-size: 3.5em;
+	font-size: 2.0em;
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #eb520a;
 	line-height: 25%;
 }
 
-#qtext{
- 	width: 90%;
- 	margin-left: 5%;
-}
-
 table.frontpage {
 	margin-left: auto;
 	margin-right: auto;
-}
-
-td.snake {
-	min-width: 300px;
-	width: 20%;
-	vertical-align: top;
-	text-align: center;
-	padding-left: 30px;
-	padding-right: 30px;
 }
 
 td.content {
@@ -76,7 +62,7 @@ td.content {
 }
 
 #login_info{
-	background-color: #6FD0FC;
+	background-color: #FAF0EB;
 	width: 100%; 
 	padding: 10px;
 	vertical-align: top;
@@ -94,8 +80,8 @@ td.content {
 
 .login {
 	background-color: #A2E0FC;
-	padding: 30px;
-	width: 600px;
+	padding: 15px;
+	width: 400px;
 	vertical-align: top;
 	margin-left: auto;
 	margin-right: auto;
@@ -104,7 +90,7 @@ td.content {
 }
 
 .front_code {
-	background-color: #CCEEFC;
+	background-color: #6FD0FC;
 	vertical-align: top;
 	width: 80%;
 	min-width: 200px; 
@@ -117,12 +103,13 @@ td.content {
 
 #abouthead{
 	width: 100%; 
-	height: 20px; 
+	height: 40px; 
 	background-color: #70fc50;
+	text-align: center;
 }
 
 .front_charity {
-	background-color: #CCEEFC;
+	background-color: #6FD0FC;
 	vertical-align: top;
 	width: 80%;
 	min-width: 200px; 
