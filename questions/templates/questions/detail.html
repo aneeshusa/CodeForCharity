@@ -36,7 +36,7 @@
 					</div>
 				</td>
 				<td class ="content">
-
+					{{ myhtml |safe }}
 					<div class = "main">
 						<div class="userinfo">
 							<!--shows who is logged in-->
@@ -54,11 +54,12 @@
 
 						<div id="topic"><h1>{{topic}}</h1></div>
 						
+						{% autoescape off %}
 						{% if question_list %}
 						    {% for question in question_list %}
 						    	<div id = "question">
 									<h2>Question {{question.id}}</h2>
-							        <p>{{ question.text }}</a></p>
+							        <div id='qtext'><p>{{ question.text }}</a></p></div>
 							        <div class="editor">{{question.question_code}}</div>
 							        <button type="button" class="SubmitButton" id={{question.id}}>Submit</button>
 
@@ -68,7 +69,8 @@
 						{% else %}
 						    <p>No questions are available.</p>
 						{% endif %}
-						
+						{% endautoescape %}
+
 						<br>
 						
 						<div align = "right">
@@ -91,6 +93,7 @@
 		var editor = ace.edit(elements[i]);
     	editor.setTheme("ace/theme/dreamweaver");
     	editor.getSession().setMode("ace/mode/javascript");
+    	editor.getSession().setUseWrapMode(true);
 	}
 	// Inject CRSF headers for Django
 	// using jQuery
